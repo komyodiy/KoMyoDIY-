@@ -1,0 +1,401 @@
+html_content = KoMyoDIY<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KO MYO DIY - Business Card & Service Advertisement</title>
+    <!-- Pyidaungsu Font Embed -->
+    <link rel="stylesheet" href="https://mmwebfonts.com/css/pyidaungsu.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #d97706; /* Warm Amber / Gold Accent */
+            --primary-dark: #b45309;
+            --bg-dark: #0f172a;  /* Deep Slate / Navy */
+            --card-bg: #1e293b;
+            --card-inner: #334155;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-blue: #38bdf8;
+            --accent-green: #22c55e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pyidaungsu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 15px;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 850px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Header / Banner Area */
+        .header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 40px 20px 30px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+            position: relative;
+        }
+
+        .logo-area {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: var(--card-inner);
+            border: 3px solid var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(217, 119, 6, 0.4);
+            overflow: hidden;
+        }
+
+        .logo-area img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-placeholder {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .business-name {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--primary);
+            letter-spacing: 1.5px;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 10px rgba(217, 119, 6, 0.3);
+        }
+
+        .owner-name {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .owner-name span {
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        /* Content Grid */
+        .content {
+            padding: 30px 25px;
+            display: grid;
+            gap: 25px;
+        }
+
+        /* Section Styling */
+        .section-title {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 8px;
+        }
+
+        .section-title i {
+            font-size: 1.1rem;
+        }
+
+        /* Service Badges */
+        .services-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .service-badge {
+            background: var(--card-inner);
+            color: #e2e8f0;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .service-badge:hover {
+            border-color: var(--primary);
+            background: rgba(217, 119, 6, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .service-badge i {
+            color: var(--primary);
+        }
+
+        /* Address Box */
+        .address-box {
+            background: var(--card-inner);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+            font-size: 0.98rem;
+            color: #cbd5e1;
+            line-height: 1.8;
+        }
+
+        .address-landmark {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        /* Contact & Social Links Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+        }
+
+        .btn-card {
+            background: var(--card-inner);
+            padding: 12px 18px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: var(--text-light);
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .btn-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-card .icon-box {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .btn-card .btn-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .btn-card .btn-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-card .btn-val {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* Specific Social Colors */
+        .bg-phone { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
+        .bg-viber { background: rgba(115, 96, 242, 0.2); color: #a78bfa; }
+        .bg-telegram { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
+        .bg-kpay { background: rgba(239, 68, 68, 0.2); color: #fca5a5; }
+        .bg-tiktok { background: rgba(244, 114, 182, 0.2); color: #f472b6; }
+        .bg-map { background: rgba(251, 146, 60, 0.2); color: #fb923c; }
+
+        /* Footer */
+        .footer {
+            background: rgba(15, 23, 42, 0.8);
+            padding: 25px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .thank-you-text {
+            font-size: 1.15rem;
+            color: var(--primary);
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 600px) {
+            .business-name { font-size: 1.7rem; }
+            .content { padding: 20px 15px; }
+            .header { padding: 30px 15px 20px; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo-area">
+                <!-- If logo file is logo.png in same directory -->
+                <img src="logo.png" alt="KO MYO DIY Logo" onerror="this.style.display='none'; document.getElementById('logo-icon').style.display='block';">
+                <i class="fa-solid fa-microchip logo-placeholder" id="logo-icon" style="display:none;"></i>
+            </div>
+            <h1 class="business-name">KO MYO DIY</h1>
+            <div class="owner-name">Owner: <span>U NAY MYO KYAW SHEIN</span></div>
+        </header>
+
+        <!-- Main Content Section -->
+        <main class="content">
+
+            <!-- Services Offered -->
+            <section>
+                <h2 class="section-title"><i class="fa-solid fa-screwdriver-wrench"></i> ဝန်ဆောင်မှုများ (Services)</h2>
+                <div class="services-list">
+                    <div class="service-badge"><i class="fa-solid fa-battery-full"></i> Lithium & LiFePO4 Battery</div>
+                    <div class="service-badge"><i class="fa-solid fa-gears"></i> DIY Accessories</div>
+                    <div class="service-badge"><i class="fa-solid fa-wifi"></i> WIFI UPS</div>
+                    <div class="service-badge"><i class="fa-solid fa-car-battery"></i> DC Power Station</div>
+                    <div class="service-badge"><i class="fa-solid fa-charging-station"></i> Power Bank</div>
+                    <div class="service-badge"><i class="fa-solid fa-bolt"></i> Electronics</div>
+                    <div class="service-badge"><i class="fa-solid fa-desktop"></i> Computer Service</div>
+                    <div class="service-badge"><i class="fa-solid fa-video"></i> CCTV Service</div>
+                </div>
+            </section>
+
+            <!-- Location & Address -->
+            <section>
+                <h2 class="section-title"><i class="fa-solid fa-location-dot"></i> ဆိုင်နေရာ လိပ်စာလမ်းညွှန်</h2>
+                <div class="address-box">
+                    <p><i class="fa-solid fa-house" style="color: var(--primary);"></i> အမှတ်(၄) ရပ်ကွက်၊ အကွက်ကြီး (၁၆)၊ အောင်ချမ်းသာလမ်း၊ တောင်ကြီးမြို့နယ်၊ အေးသာယာမြို့။</p>
+                    <div class="address-landmark">
+                        <i class="fa-solid fa-circle-info" style="color: var(--accent-blue);"></i> အေးသာယာ ဓမ္မာရုံး ဘေးလမ်းမှ ဝင်၍ သုံးလမ်းမြောက်တွင် ဆိုင်ကယ်ဆေးဆေးဆိုင်လမ်းသို့ (Famous Gym And Dancedio နှင့် မျက်နှာချင်းဆိုင်)
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact & Payments -->
+            <section>
+                <h2 class="section-title"><i class="fa-solid fa-address-book"></i> ဆက်သွယ်ရန်နှင့် လူမှုကွန်ရက်များ</h2>
+                <div class="contact-grid">
+                    
+                    <!-- Phone 1 -->
+                    <a href="tel:09428331040" class="btn-card">
+                        <div class="icon-box bg-phone"><i class="fa-solid fa-phone"></i></div>
+                        <div class="btn-text">
+                            <span class="btn-label">Phone 1</span>
+                            <span class="btn-val">09 428 331 040</span>
+                        </div>
+                    </a>
+
+                    <!-- Phone 2 -->
+                    <a href="tel:0969166788" class="btn-card">
+                        <div class="icon-box bg-phone"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                        <div class="btn-text">
+                            <span class="btn-label">Phone 2</span>
+                            <span class="btn-val">09 691 66 788</span>
+                        </div>
+                    </a>
+
+                    <!-- Viber -->
+                    <a href="viber://chat?number=%2B959428331040" class="btn-card">
+                        <div class="icon-box bg-viber"><i class="fa-brands fa-viber"></i></div>
+                        <div class="btn-text">
+                            <span class="btn-label">Viber</span>
+                            <span class="btn-val">09 428 331 040</span>
+                        </div>
+                    </a>
+
+                    <!-- Telegram -->
+                    <a href="https://t.me/+959428331040" target="_blank" class="btn-card">
+                        <div class="icon-box bg-telegram"><i class="fa-brands fa-telegram"></i></div>
+                        <div class="btn-text">
+                            <span class="btn-label">Telegram</span>
+                            <span class="btn-val">09 428 331 040</span>
+                        </div>
+                    </a>
+
+                    <!-- KPay -->
+                    <div class="btn-card">
+                        <div class="icon-box bg-kpay"><i class="fa-solid fa-wallet"></i></div>
+                        <div class="btn-text">
+                            <span class="btn-label">KBZPay Account</span>
+                            <span class="btn-val">09 428 331 040</span>
+                        </div>
+                    </div>
+
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/@naymyokyawshein1?_r=1&_t=ZS-98rool2xr9T" target="_blank" class="btn-card">
+                        <div class="icon-box bg-tiktok"><i class="fa-brands fa-tiktok"></i></div>
+                        <div class="btn-text">
+                            <span class="btn-label">TikTok Profile</span>
+                            <span class="btn-val">@naymyokyawshein1</span>
+                        </div>
+                    </a>
+
+                    <!-- Google Map -->
+                    <a href="https://goo.gl/maps/zHq2LUTcwD9dUVTj8" target="_blank" class="btn-card" style="grid-column: 1 / -1;">
+                        <div class="icon-box bg-map"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <div class="btn-text">
+                            <span class="btn-label">Google Maps Direction</span>
+                            <span class="btn-val">ဆိုင်တည်နေရာ မြေပုံကြည့်ရှုရန် နှိပ်ပါ</span>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="thank-you-text">အားလုံးကို ချစ်ခင်ကျေးဇူးတင်ပါသည်</div>
+            <div class="copyright">&copy; KO MYO DIY - All Rights Reserved.</div>
+        </footer>
+    </div>
+
+</body>
+</html>
+"""
+
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+print("HTML generated successfully as index.html")
